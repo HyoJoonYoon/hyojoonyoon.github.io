@@ -11,6 +11,31 @@
 .hero-toc{margin-top:27px;max-width:650px}.toc-label{display:block;color:var(--teal);font-size:12px;font-weight:750;margin-bottom:9px;letter-spacing:.05em}.toc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.toc-link{display:flex;align-items:center;gap:9px;padding:10px 12px;min-height:44px;border:1px solid #58717b;border-radius:9px;color:#e2eeef;background:#ffffff06;font-size:13px;font-weight:700;line-height:1.5}.toc-link:hover{background:#ffffff13;border-color:var(--teal)}.toc-num{color:var(--teal);font-size:10px;letter-spacing:.04em}.toc-learning{background:var(--accent);border-color:var(--accent);color:white}.toc-learning:hover{background:#0c5859}.hero-toc+.hero-actions{margin-top:14px}.nav-learning{color:var(--accent);font-weight:800}.hero-toc+.hero-actions .btn{flex:0 1 auto}@media(max-width:540px){.toc-link{padding:9px;font-size:12px}.navlinks a.nav-learning{display:inline}.hero-toc{margin-top:20px}}@media print{.hero-toc{display:none}}
 
 .hero-employment{border-top:1px solid #ffffff1c;padding:4px 0 8px}.hero-company{display:grid;gap:3px;padding:13px 0}.hero-company+.hero-company{border-top:1px solid #ffffff1c}.hero-company b{font-size:15px;font-weight:700;color:#fff;line-height:1.5}.hero-company span{color:var(--teal);font-size:13px;font-variant-numeric:tabular-nums;letter-spacing:0;line-height:1.5;white-space:nowrap}@media(max-width:800px){.hero-employment{margin:0 12px}.hero-company{padding:12px 0}}@media(max-width:540px){.hero-company b{font-size:14px}.hero-company span{font-size:12px}}@media print{.hero-company b,.hero-company span{color:var(--ink)}.hero-employment,.hero-company+.hero-company{border-color:var(--line)}}
+
+/* Align the visual, body and footer of real project cards. */
+#real .projects{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+#real .project{min-width:0}
+#real .project .visual{min-height:180px;flex-shrink:0;justify-content:flex-start}
+#real .project .visual-label{line-height:1.5}
+#real .project .visual .process{align-items:stretch}
+#real .project .visual .arrow{align-self:center}
+#real .project .visual .step{min-width:0}
+#real .project .project-content{min-width:0}
+#real .project details{flex-shrink:0}
+@supports (grid-template-rows:subgrid){
+  @media(min-width:901px){
+    #real .project{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0}
+    #real .project .project-content{align-self:stretch}
+    #real .project details{margin-top:0;align-self:start}
+  }
+}
+@media(max-width:900px){
+  #real .projects{grid-template-columns:1fr}
+  #real .project .visual{min-height:154px}
+}
+@media(max-width:540px){
+  #real .project .visual{min-height:0}
+}
 </style>
 </head>
 <body>
