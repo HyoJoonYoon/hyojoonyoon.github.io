@@ -36,6 +36,14 @@
 @media(max-width:540px){
   #real .project .visual{min-height:0}
 }
+
+/* Alternating muted palettes distinguish adjacent project cards. */
+#real .project:nth-child(odd) .visual{background:#eaf3f4;border-bottom-color:#d3e3e5}
+#real .project:nth-child(even) .visual{background:#f3efe8;border-bottom-color:#e3dbce}
+#real .project:nth-child(even) .visual-label{color:#79674e}
+#real .project:nth-child(even) .visual .step{background:#fdfbf7;border-color:#dcd2c2}
+#real .project:nth-child(even) .visual .arrow{color:#9b896e}
+#real .project:nth-child(even) .visual .tag{background:#ebe4d7;color:#65563e}
 </style>
 </head>
 <body>
