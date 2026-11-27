@@ -7,7 +7,7 @@
 <main class="shell">
 <section id="login-panel" class="panel login"><h2>관리자 인증</h2><p class="caption">GitHub 저장소 수정 권한이 있는 관리자만 게시할 수 있습니다.</p><div class="hint">GitHub에서 <b>Fine-grained personal access token</b>을 생성하고, 이 홈페이지 저장소에만 <b>Contents: Read and write</b> 권한을 부여하세요. 토큰은 이 화면에만 입력하세요. 저장소, 브라우저 저장소 또는 외부 서버에 보관하지 않습니다. 새로고침하거나 로그아웃하면 다시 인증해야 합니다.</div><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">GitHub 토큰 발급 페이지 열기 ↗</a><form id="login-form"><label class="field"><span>GitHub 인증 토큰</span><input id="token-input" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_..." required></label><button id="login-button" class="primary" type="submit">인증하고 관리 시작</button></form><div id="login-status" class="status" role="status"></div></section>
 <section id="workspace" hidden><div class="toolbar"><div class="row"><div class="controls"><div><label for="page-select">페이지</label><select id="page-select"><option value="index.html">포트폴리오</option><option value="learning.html">역량 개발</option></select></div><div><label for="group-select">편집 영역</label><select id="group-select"></select></div></div><div class="controls" style="width:auto"><button id="reload" type="button">다시 불러오기</button><button id="save" type="button" class="primary" disabled>변경사항 저장</button><button id="logout" type="button">로그아웃</button></div></div><div id="status" class="status" role="status" aria-live="polite"></div></div><div class="panel"><h2 id="group-title">편집</h2><p id="group-description" class="caption"></p><div id="editor"></div></div></section>
-<footer class="foot">GitHub 저장소의 원본을 불러와 수정합니다. 저장 시 공개 홈페이지에 반영되며, 경력기술서 PDF 원본은 별도로 유지됩니다.</footer>
+<footer class="foot">GitHub 저장소의 원본을 불러와 수정합니다. 저장 시 공개 홈페이지에 반영되며, 경력기술서 PDF는 전용 편집 영역에서 교체할 수 있습니다.</footer>
 </main>
 <script>
 'use strict';
@@ -15,7 +15,7 @@
 const REPO='HyoJoonYoon/hyojoonyoon.github.io', BASE='https://api.github.com/repos/'+REPO, BRANCH='main';
 const $=id=>document.getElementById(id), editor=$('editor'), pageSelect=$('page-select'), groupSelect=$('group-select'), saveBtn=$('save');
 let token='', doc=null, sha='', currentPage='index.html', dirty=false, busy=false, study=null;
-const mainGroups=[['hero','메인 소개','첫 화면의 이름, 소개 문구 및 총 경력을 수정합니다. 회사명과 근무기간은 경력사항에서 수정하면 연동됩니다.'],['skills','핵심 역량','업무 분야와 설명을 수정합니다.'],['career','경력사항','회사명, 입퇴사일, 직급, 담당 업무 및 상세 설명을 수정합니다.'],['projects','실무 프로젝트','실제 업무 사례의 텍스트를 수정하거나 추가·삭제합니다. 기존 도식의 모양은 그대로 유지됩니다.'],['planned','개인 프로젝트','개인 프로젝트의 상태, 제목과 설명을 관리합니다.'],['about','자기소개','자기소개 제목과 문단을 수정합니다.'],['credentials','학력 및 자격','학력, 학점, 활동 및 자격·어학 정보를 수정합니다.'],['tool-skills','보유 스킬','도구 및 실무 역량의 설명과 상·중·하 숙련도를 관리합니다.']];
+const mainGroups=[['hero','메인 소개','첫 화면의 이름, 소개 문구 및 총 경력을 수정합니다. 회사명과 근무기간은 경력사항에서 수정하면 연동됩니다.'],['skills','핵심 역량','업무 분야와 설명을 수정합니다.'],['career','경력사항','회사명, 입퇴사일, 직급, 담당 업무 및 상세 설명을 수정합니다.'],['projects','실무 프로젝트','실제 업무 사례의 텍스트를 수정하거나 추가·삭제합니다. 기존 도식의 모양은 그대로 유지됩니다.'],['planned','개인 프로젝트','개인 프로젝트의 상태, 제목과 설명을 관리합니다.'],['about','자기소개','자기소개 제목과 문단을 수정합니다.'],['credentials','학력 및 자격','학력, 학점, 활동 및 자격·어학 정보를 수정합니다.'],['tool-skills','보유 스킬','도구 및 실무 역량의 설명과 상·중·하 숙련도를 관리합니다.'],['resume-pdf','경력기술서 PDF','공개 홈페이지에서 다운로드되는 경력기술서 파일을 교체합니다.']];
 const learningGroups=[['learning-hero','역량 개발 소개','역량 개발 페이지의 첫 화면과 안내 문구를 수정합니다.'],['learning-cards','역량 개발 분야','경영지도사, Power BI 등 역량 개발 분야를 수정합니다.'],['notes','경영지도사 필기노트','과목별 필기노트를 추가하고 수정하거나 삭제합니다.'],['questions','경영지도사 문제은행','문제, 선택지, 정답, 해설을 관리합니다. 등록한 문제는 역량 개발 페이지에서 랜덤 출제됩니다.']];
 function status(msg,type='',login=false){const e=$(login?'login-status':'status');e.textContent=msg;e.className='status'+(type?' '+type:'')}
 function setBusy(v){busy=v;saveBtn.disabled=v||!dirty;['reload','logout','page-select','group-select'].forEach(id=>$(id).disabled=v);editor.querySelectorAll('button,input,textarea,select').forEach(e=>e.disabled=v)}
@@ -46,6 +46,29 @@ else if(key==='projects'||key==='planned'){const real=key==='projects',grouped=r
 else if(key==='about'){const target=doc.querySelector('#about .about');textBlock('자기소개',target);add('소개 문단 추가',()=>{const body=target.lastElementChild;body.append(node('p','새 문단을 입력하세요.'))})}
 else if(key==='credentials'){const edu=doc.querySelector('.edu-grid .edu-card'),cert=doc.querySelector('.edu-grid article:nth-child(2)');textBlock('학력 및 활동',edu);add('학력 항목 추가',()=>newRow(edu,'새 항목','내용'));cert.querySelectorAll('.cred-row').forEach((row,i)=>textBlock('자격·어학 '+(i+1),row,true));add('자격·어학 추가',()=>newRow(cert,'자격증명','취득일 또는 점수'))}
 else if(key==='tool-skills'){doc.querySelectorAll('#tool-skills .skill-grid article').forEach(card=>{editor.append(el('h3',card.querySelector('h3').textContent,'group-head'));card.querySelectorAll('.level-row').forEach(row=>{const b=textBlock(row.querySelector('strong').textContent,row,true);field(b,'숙련도',row.querySelector('.level-value b').textContent,v=>syncLevel(row,v),false,[['하','하'],['중','중'],['상','상']])});add('스킬 추가',()=>{const row=node('div',undefined,'level-row'),d=node('div'),lv=node('div',undefined,'level-value'),bars=node('div',undefined,'level-bars');d.append(node('strong','새 스킬'),node('p','활용 가능한 기능'));bars.setAttribute('aria-hidden','true');for(let i=0;i<3;i++)bars.append(node('i'));lv.append(bars,node('b','중'));row.append(d,lv);syncLevel(row,'중');card.append(row)})})}
+else if(key==='resume-pdf'){
+  const target=doc.getElementById('pdf-data');
+  if(!target){editor.append(el('p','경력기술서 PDF 저장 영역을 찾을 수 없습니다.','status error'));return}
+  const b=block('경력기술서 PDF 교체');
+  b.append(el('p','홈페이지의 모든 경력기술서 다운로드 버튼에 동일한 PDF가 연결됩니다. 공개용 파일인지 확인하세요.','hint'));
+  const l=el('label',undefined,'field');l.append(el('span','새 PDF 파일 선택'));
+  const input=el('input');input.type='file';input.accept='.pdf,application/pdf';l.append(input);b.append(l);
+  const msg=el('p','PDF 선택 후 변경사항 저장을 누르세요.','status');b.append(msg);
+  input.addEventListener('change',async()=>{
+    const file=input.files?.[0];if(!file)return;
+    if(file.size>500000){msg.textContent='현재 내장형 PDF 방식에서는 500KB 이하 파일만 지원합니다.';msg.className='status error';input.value='';return}
+    const selectedDoc=doc;
+    setBusy(true);
+    try{
+      const bytes=new Uint8Array(await file.arrayBuffer());
+      if(bytes.length<8||String.fromCharCode(...bytes.subarray(0,5))!=='%PDF-')throw Error('유효한 PDF 파일을 선택하세요.');
+      let raw='';for(let i=0;i<bytes.length;i+=8192)raw+=String.fromCharCode(...bytes.subarray(i,i+8192));
+      if(doc!==selectedDoc||currentPage!=='index.html')throw Error('페이지가 변경되었습니다. 파일을 다시 선택하세요.');
+      target.textContent=btoa(raw);
+      mark();msg.textContent=file.name+' · '+Math.round(file.size/1024)+'KB · 교체 준비 완료. 상단의 변경사항 저장을 눌러 주세요.';msg.className='status success';
+    }catch(e){msg.textContent=e.message;msg.className='status error';input.value=''}finally{setBusy(false)}
+  });
+}
 else if(key==='learning-hero'){const b=block('역량 개발 페이지 소개');doc.querySelectorAll('.hero h1,.hero p').forEach(e=>textFields(b,e))}
 else if(key==='learning-cards'){const parent=doc.querySelector('.learning-grid');parent.querySelectorAll('article').forEach(a=>textBlock(a.querySelector('h3')?.textContent||'역량 개발 분야',a))}
 else if(key==='notes'){study.notes.forEach((n,i)=>{const b=block(n.title||'필기노트 '+(i+1),()=>study.notes.splice(i,1));field(b,'과목',n.subject,v=>n.subject=v);field(b,'제목',n.title,v=>n.title=v);field(b,'필기 내용',n.body,v=>n.body=v,true)});add('필기노트 추가',()=>study.notes.push({subject:'',title:'',body:''}))}
