@@ -196,36 +196,23 @@
 #real .project-group-title .project-group-date{padding-top:0}
 @media(max-width:540px){#real .project-group-title{gap:3px 10px}#real .project-group-title .project-group-date{font-size:12px}}
 
-/* Career overview: auto-generated from editable career and credential entries */
-.career-overview{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin:0 0 28px;box-shadow:var(--shadow)}
-.overview-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
-.overview-heading h3{font-size:22px;letter-spacing:-.04em}.overview-heading p{font-size:13px;margin-top:4px}
-.overview-legend{display:flex;flex-wrap:wrap;gap:8px 14px;color:var(--muted);font-size:11px;font-weight:650;align-items:center}
+
+/* Career overview: compact shared-axis timeline */
+.career-overview{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:20px 24px 14px;margin:0 0 28px;box-shadow:var(--shadow)}
+.overview-heading{display:flex;align-items:center;justify-content:space-between;gap:8px 14px;flex-wrap:wrap;margin-bottom:10px}
+.overview-heading h3{font-size:20px;letter-spacing:-.04em}.overview-heading p{font-size:12px;margin-top:3px}
+.overview-legend{display:flex;flex-wrap:wrap;gap:6px 12px;color:var(--muted);font-size:11px;font-weight:650;align-items:center}
 .overview-legend span{display:inline-flex;align-items:center;gap:5px}.overview-legend i{width:9px;height:9px;border-radius:3px;background:var(--event)}
-.career-overview [data-category="education"]{--event:#3385bd;--event-bg:#eaf4fb}
-.career-overview [data-category="military"]{--event:#82919b;--event-bg:#f0f3f4}
-.career-overview [data-category="career"]{--event:#168579;--event-bg:#e7f5ef}
-.career-overview [data-category="certificate"]{--event:#9165b6;--event-bg:#f4edf9}
-.career-overview [data-category="other"]{--event:#b58a48;--event-bg:#fbf4e8}
-.overview-scroll{overflow-x:auto;overscroll-behavior-inline:contain;padding:0 0 7px}
-.overview-chart{min-width:850px;--label-w:214px}
-.overview-axis,.overview-row{display:grid;grid-template-columns:var(--label-w) minmax(0,1fr);align-items:center}
-.overview-axis{height:31px;border-bottom:1px solid var(--line)}
-.overview-axis-label{font-size:11px;font-weight:750;color:var(--muted);padding-left:10px}
-.overview-ticks,.overview-plot{position:relative;height:100%}
-.overview-tick{position:absolute;top:0;transform:translateX(4px);font-size:10px;color:var(--muted);font-weight:650;white-space:nowrap}
-.overview-group{padding:9px 0 5px;border-bottom:1px solid #edf1f2}
-.overview-group:last-child{border-bottom:0}
-.overview-group-label{font-size:10px;font-weight:800;color:var(--event);letter-spacing:.06em;padding:0 10px 2px}
-.overview-row{min-height:39px}
-.overview-name{padding:3px 8px 3px 10px;line-height:1.35;overflow-wrap:anywhere}
-.overview-name b{display:block;font-size:12px;color:var(--ink);font-weight:750}
-.overview-name small{display:block;color:var(--muted);font-size:10px;font-variant-numeric:tabular-nums;margin-top:2px}
-.overview-plot{min-height:39px;background-image:linear-gradient(to right,#dce5e7 1px,transparent 1px);background-size:var(--year-width) 100%;border-right:1px solid var(--line)}
-.overview-bar{position:absolute;top:50%;transform:translateY(-50%);height:16px;min-width:4px;border-radius:5px;background:var(--event);opacity:.88}
-.overview-dot{position:absolute;top:50%;transform:translate(-50%,-50%);height:12px;width:12px;border:2px solid #fff;border-radius:50%;background:var(--event);box-shadow:0 0 0 1px var(--event)}
-.overview-note{font-size:11px;margin-top:12px;color:var(--muted)}
-@media(max-width:650px){.career-overview{padding:16px}.overview-heading h3{font-size:19px}.overview-chart{--label-w:190px;min-width:800px}.overview-heading{margin-bottom:12px}}
+.career-overview [data-category="education"]{--event:#2588bd}
+.career-overview [data-category="military"]{--event:#82919b}
+.career-overview [data-category="career"]{--event:#198b68}
+.career-overview [data-category="certificate"]{--event:#a16ac7}
+.career-overview [data-category="other"]{--event:#b58a48}
+.overview-scroll{overflow-x:auto;overscroll-behavior-inline:contain;padding:0 0 3px}
+.overview-chart{width:100%;min-width:840px}
+.overview-chart svg{display:block;width:100%;height:auto;overflow:visible}
+.overview-note{font-size:11px;margin-top:6px;color:var(--muted)}
+@media(max-width:650px){.career-overview{padding:14px}.overview-heading h3{font-size:18px}.overview-heading p{font-size:11px}}
 
 </style>
 </head>
@@ -241,7 +228,7 @@
 <article class="card"><div class="skill-index">05</div><h3>IR 및 투자검토</h3><p>투자 대상 기업의 재무제표 및 재무구조 분석, IR 자료 작성, 투자자 대응 및 투자계약 후속 실무.</p><div class="skill-tags"><span class="tag">재무분석</span><span class="tag">IR</span><span class="tag">RCPS</span></div></article>
 <article class="card"><div class="skill-index">06</div><h3>관계회사 운영관리</h3><p>회계·세무, 인사·급여, 자금관리, 법인행정 및 정부지원사업 사업비 집행·정산 등 기업 운영관리 전반.</p><div class="skill-tags"><span class="tag">WEHAGO</span><span class="tag">운영관리</span><span class="tag">정부지원사업</span></div></article>
 </div></div></section>
-<section class="section" id="career"><div class="shell"><div class="section-head"><div><div class="eyebrow">02 / 경력</div><h2>경력사항</h2><p>경영기획 직무를 중심으로 쌓아온 실무 경험입니다.</p></div><button class="btn" data-pdf="">상세 경력기술서 ↓</button></div><article class="career-overview" id="career-overview" aria-labelledby="overview-title"><div class="overview-heading"><div><h3 id="overview-title">커리어 타임라인</h3><p>학력, 군복무, 실무 경력과 자격 취득을 시간순으로 정리했습니다.</p></div><div class="overview-legend" aria-label="범례"><span data-category="education"><i></i>학력</span><span data-category="military"><i></i>군복무</span><span data-category="career"><i></i>경력</span><span data-category="certificate"><i></i>자격증</span><span data-category="other"><i></i>기타</span></div></div><div class="overview-scroll" tabindex="0" role="region" aria-label="연도별 이력 타임라인, 가로 스크롤 가능"><div class="overview-chart" id="overview-chart"></div></div><p class="overview-note">막대는 재학·복무·재직기간, 점은 취득 시점입니다. 연도만 표시된 이력은 월·일 미확인입니다. 화면이 좁으면 좌우로 스크롤할 수 있습니다.</p><noscript><p>타임라인을 보려면 JavaScript를 활성화해 주세요.</p></noscript></article>
+<section class="section" id="career"><div class="shell"><div class="section-head"><div><div class="eyebrow">02 / 경력</div><h2>경력사항</h2><p>경영기획 직무를 중심으로 쌓아온 실무 경험입니다.</p></div><button class="btn" data-pdf="">상세 경력기술서 ↓</button></div><article class="career-overview" id="career-overview" aria-labelledby="overview-title"><div class="overview-heading"><div><h3 id="overview-title">커리어 타임라인</h3><p>학력, 군복무, 실무 경력과 자격 취득을 시간순으로 정리했습니다.</p></div><div class="overview-legend" aria-label="범례"><span data-category="education"><i></i>학력</span><span data-category="military"><i></i>군복무</span><span data-category="career"><i></i>경력</span><span data-category="certificate"><i></i>자격증</span><span data-category="other"><i></i>기타</span></div></div><div class="overview-scroll" tabindex="0" role="region" aria-label="연도별 이력 타임라인, 가로 스크롤 가능"><div class="overview-chart" id="overview-chart"></div></div><p class="overview-note">막대는 기간, 점은 취득 시점입니다. 항목에 마우스를 올리면 상세 날짜를 확인할 수 있습니다. 모바일에서는 좌우로 스크롤하세요.</p><noscript><p>타임라인을 보려면 JavaScript를 활성화해 주세요.</p></noscript></article>
 <script type="application/json" id="career-overview-data">[{"category":"education","name":"충주대원고등학교","start":"2012","end":"2015"},{"category":"military","name":"군복무","start":"2017","end":"2019"},{"category":"certificate","name":"자동차운전면허 2종 보통","start":"2022.08","end":""}]</script>
 <div class="timeline">
 <article class="job"><div class="job-meta"><time>2026.01.26 – 2026.04.30</time><h3>디지털퍼스트㈜</h3><p>경영기획본부 · 팀원<br>광고대행업</p></div><div class="job-body"><h4>경영실적 분석 및 단기 손익 전망</h4><ul><li>디지털퍼스트·디지털트리니티 2개 법인의 매출·비용·손익 분석 및 격주 경영실적 보고</li><li>전년 동기 대비 실적 증감 및 주요 손익 변동요인 분석</li><li>향후 3개월 예상 매출·비용 및 손익 산출</li><li>주요 판관비 항목별 연간 예상액 산정 및 예산 검토자료 작성</li><li>계약금액·기간·여신 조건 검토, 내부 품의 대조 및 날인</li></ul><details><summary>업무 상세 보기</summary><div class="career-detail"><div class="career-detail-item"><h5>경영실적 분석 및 손익 전망</h5><p>부서별 Google 스프레드시트의 실적 자료를 취합해 두 법인의 매출·비용·손익을 분석했습니다. 전년 동기 대비 증감 내역과 주요 손익 변동요인을 파악하고, 예상 매출·비용 발생계획 및 주요 변동사항을 반영해 향후 3개월의 손익 전망을 산출했습니다. 이를 격주 경영실적 보고자료에 반영했습니다.</p></div><div class="career-detail-item"><h5>연간 판관비 예상액 산정</h5><p>인건비, 지급수수료, 임차료, 복리후생비 등 주요 비용을 고정적으로 발생하는 비용과 변동 가능성이 있는 비용으로 구분했습니다. 항목별 발생 특성을 고려해 연간 예상액을 산정하고 전체 판관비 규모와 항목별 지출액을 비교·검토할 수 있도록 예산 검토자료를 작성했습니다.</p></div><div class="career-detail-item"><h5>계약서 검토 및 날인</h5><p>계약 주체, 계약기간, 계약금액, 여신 조건 등 주요 계약 조건을 검토하고 내부 품의와의 일치 여부를 확인했습니다. 추가 확인이 필요한 사항은 유관부서와 조율하고 내부 승인 절차에 따라 날인 및 계약서 처리를 진행했습니다.</p></div></div></details></div></article>
@@ -294,19 +281,62 @@ document.querySelectorAll('[data-pdf]').forEach(btn=>btn.addEventListener('click
  document.querySelectorAll('#credentials .edu-grid article:not(.edu-card) .cred-row').forEach(j=>{add('certificate',j.querySelector('b')?.textContent.trim(),j.querySelector('span')?.textContent.trim());});
  try{const rows=JSON.parse(document.getElementById('career-overview-data').textContent);if(Array.isArray(rows))rows.forEach(e=>add(e.category,e.name,e.start,e.end));}catch(e){console.warn('Career timeline extra entries:',e);}
  if(!events.length){root.textContent='등록된 이력이 없습니다.';return;}
+
  const first=Math.min(...events.map(e=>e.start.year)),last=Math.max(new Date().getFullYear(),...events.map(e=>(e.end||e.start).year)),span=last-first+1;
- const position=d=>100*(d.pos-first)/span;
- const make=(tag,cls,value)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(value!==undefined)e.textContent=value;return e;};
- root.replaceChildren();root.style.setProperty('--year-width',(100/span)+'%');root.style.minWidth=Math.max(850,214+span*42)+'px';
- const axis=make('div','overview-axis'),ticks=make('div','overview-ticks');axis.append(make('div','overview-axis-label','구분 / 기간'),ticks);
- const step=span>24?Math.ceil(span/18):1;
- for(let y=first;y<=last;y+=step){const tick=make('span','overview-tick',String(y));tick.style.left=(100*(y-first)/span)+'%';ticks.append(tick);}root.append(axis);
- for(const [category,label] of Object.entries(categories)){
-  const groupEvents=events.filter(e=>e.category===category).sort((a,b)=>a.start.pos-b.start.pos);if(!groupEvents.length)continue;
-  const group=make('div','overview-group');group.dataset.category=category;group.append(make('div','overview-group-label',label));
-  for(const e of groupEvents){const row=make('div','overview-row'),name=make('div','overview-name'),period=e.start.label+(e.end?' ~ '+e.end.label:'');name.append(make('b','',e.name),make('small','',period));const plot=make('div','overview-plot');const mark=make('div',e.end?'overview-bar':'overview-dot');mark.style.left=position(e.start)+'%';if(e.end)mark.style.width=Math.max(0,position(e.end)-position(e.start))+'%';mark.title=e.name+' | '+period;mark.setAttribute('aria-hidden','true');plot.append(mark);row.append(name,plot);group.append(row);}
-  root.append(group);
+ const W=Math.max(900,span*49+80),left=28,right=W-28,plot=right-left;
+ const colors={education:['#2588bd','#e7f5fc'],military:['#82919b','#eef1f3'],career:['#198b68','#e5f6ed'],certificate:['#a16ac7','#f5ecfb'],other:['#b58a48','#fbf4e8']};
+ const x=d=>left+(d.pos-first)/span*plot;
+ const shortNames={'데이터분석준전문가(ADsP)':'ADsP','자동차운전면허 2종 보통':'운전면허 2종 보통','컴퓨터활용능력 1급':'컴퓨터활용능력 1급'};
+ const labelWidth=t=>Math.max(42,Math.min(240,Array.from(t).reduce((sum,c)=>sum+(/[^\u0000-\u007f]/.test(c)?12:6.6),0)+25));
+ const sorted=events.slice().sort((a,b)=>a.start.pos-b.start.pos);
+ function place(list,offset){
+  const lanes=[];
+  for(const e of list){
+   e.display=shortNames[e.name]||e.name;e.width=labelWidth(e.display);e.anchor=x(e.start);
+   e.labelX=Math.max(5,Math.min(W-e.width-5,e.anchor-8));
+   let lane=0;
+   while(lanes[lane]&&lanes[lane].some(p=>e.labelX<p[1]+9&&e.labelX+e.width+9>p[0]))lane++;
+   (lanes[lane]||(lanes[lane]=[])).push([e.labelX,e.labelX+e.width]);e.lane=offset+lane;
+  }
+  return lanes.length;
  }
+ const periods=sorted.filter(e=>e.end),points=sorted.filter(e=>!e.end);
+ const low=place(periods,0),high=place(points,low),lanes=low+high;
+ const baseline=48+lanes*31, H=baseline+29;
+ const ns='http://www.w3.org/2000/svg';
+ function make(tag,attrs={},value){const el=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,String(v));if(value!==undefined)el.textContent=value;return el;}
+ root.replaceChildren();root.style.minWidth=Math.max(840,span*43+72)+'px';
+ const svg=make('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'연도별 커리어 타임라인'});
+ svg.append(make('title',{},'학력·군복무·경력·자격증 타임라인'));
+ const step=span>24?Math.ceil(span/18):1;
+ for(let y=first;y<=last;y+=step){
+  const px=left+(y-first)/span*plot;
+  svg.append(make('line',{x1:px,y1:baseline-32,x2:px,y2:baseline+4,stroke:'#e0e7e9','stroke-width':1}));
+  svg.append(make('text',{x:px,y:baseline+19,'text-anchor':'middle','font-size':11,fill:'#637681'},String(y)));
+ }
+ svg.append(make('line',{x1:left,y1:baseline,x2:right,y2:baseline,stroke:'#8c9da4','stroke-width':1.1}));
+ const barHeight={education:17,military:9,career:26,certificate:14,other:14};
+ // Draw military last, so its interval remains visible during university.
+ const drawPeriods=periods.slice().sort((a,b)=>(a.category==='military'?1:0)-(b.category==='military'?1:0));
+ for(const e of drawPeriods){
+  const [c]=colors[e.category];const h=barHeight[e.category]||14;
+  const rect=make('rect',{x:x(e.start),y:baseline-h,width:Math.max(2,x(e.end)-x(e.start)),height:h,rx:2,fill:c,opacity:e.category==='military'?.8:.37});
+  rect.append(make('title',{},e.name+' | '+e.start.label+' ~ '+e.end.label));svg.append(rect);
+ }
+ for(const e of sorted){
+  const [c,bg]=colors[e.category];const h=e.end?(barHeight[e.category]||14):0;
+  const py=baseline-h,ly=baseline-46-e.lane*31,tip=Math.max(e.labelX+8,Math.min(e.labelX+e.width-8,e.anchor));
+  const g=make('g',{'aria-label':e.name+' '+e.start.label+(e.end?' ~ '+e.end.label:'')});
+  g.append(make('title',{},e.name+' | '+e.start.label+(e.end?' ~ '+e.end.label:'')));
+  g.append(make('path',{d:'M '+e.anchor+' '+py+' V '+(ly+26)+' L '+tip+' '+(ly+23),fill:'none',stroke:c,'stroke-width':1,'stroke-opacity':.75}));
+  g.append(make('circle',{cx:e.anchor,cy:py,r:2.5,fill:'#fff',stroke:c,'stroke-width':1.1}));
+  g.append(make('rect',{x:e.labelX,y:ly,width:e.width,height:23,rx:10,fill:bg,stroke:c,'stroke-width':.7}));
+  g.append(make('circle',{cx:e.labelX+9,cy:ly+11.5,r:3.2,fill:c}));
+  const txt=make('text',{x:e.labelX+16,y:ly+15.6,fill:'#243b47','font-size':11.5,'font-weight':650},e.display);
+  if(e.width===240){txt.setAttribute('textLength',220);txt.setAttribute('lengthAdjust','spacingAndGlyphs');}
+  g.append(txt);svg.append(g);
+ }
+ root.append(svg);
 })();
 </script>
 </body></html>
