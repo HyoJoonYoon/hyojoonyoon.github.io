@@ -195,6 +195,38 @@
 #real .project-group-title{display:flex;align-items:baseline;gap:5px 14px;flex-wrap:wrap}
 #real .project-group-title .project-group-date{padding-top:0}
 @media(max-width:540px){#real .project-group-title{gap:3px 10px}#real .project-group-title .project-group-date{font-size:12px}}
+
+/* Career overview: auto-generated from editable career and credential entries */
+.career-overview{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin:0 0 28px;box-shadow:var(--shadow)}
+.overview-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.overview-heading h3{font-size:22px;letter-spacing:-.04em}.overview-heading p{font-size:13px;margin-top:4px}
+.overview-legend{display:flex;flex-wrap:wrap;gap:8px 14px;color:var(--muted);font-size:11px;font-weight:650;align-items:center}
+.overview-legend span{display:inline-flex;align-items:center;gap:5px}.overview-legend i{width:9px;height:9px;border-radius:3px;background:var(--event)}
+.career-overview [data-category="education"]{--event:#3385bd;--event-bg:#eaf4fb}
+.career-overview [data-category="military"]{--event:#82919b;--event-bg:#f0f3f4}
+.career-overview [data-category="career"]{--event:#168579;--event-bg:#e7f5ef}
+.career-overview [data-category="certificate"]{--event:#9165b6;--event-bg:#f4edf9}
+.career-overview [data-category="other"]{--event:#b58a48;--event-bg:#fbf4e8}
+.overview-scroll{overflow-x:auto;overscroll-behavior-inline:contain;padding:0 0 7px}
+.overview-chart{min-width:850px;--label-w:214px}
+.overview-axis,.overview-row{display:grid;grid-template-columns:var(--label-w) minmax(0,1fr);align-items:center}
+.overview-axis{height:31px;border-bottom:1px solid var(--line)}
+.overview-axis-label{font-size:11px;font-weight:750;color:var(--muted);padding-left:10px}
+.overview-ticks,.overview-plot{position:relative;height:100%}
+.overview-tick{position:absolute;top:0;transform:translateX(4px);font-size:10px;color:var(--muted);font-weight:650;white-space:nowrap}
+.overview-group{padding:9px 0 5px;border-bottom:1px solid #edf1f2}
+.overview-group:last-child{border-bottom:0}
+.overview-group-label{font-size:10px;font-weight:800;color:var(--event);letter-spacing:.06em;padding:0 10px 2px}
+.overview-row{min-height:39px}
+.overview-name{padding:3px 8px 3px 10px;line-height:1.35;overflow-wrap:anywhere}
+.overview-name b{display:block;font-size:12px;color:var(--ink);font-weight:750}
+.overview-name small{display:block;color:var(--muted);font-size:10px;font-variant-numeric:tabular-nums;margin-top:2px}
+.overview-plot{min-height:39px;background-image:linear-gradient(to right,#dce5e7 1px,transparent 1px);background-size:var(--year-width) 100%;border-right:1px solid var(--line)}
+.overview-bar{position:absolute;top:50%;transform:translateY(-50%);height:16px;min-width:4px;border-radius:5px;background:var(--event);opacity:.88}
+.overview-dot{position:absolute;top:50%;transform:translate(-50%,-50%);height:12px;width:12px;border:2px solid #fff;border-radius:50%;background:var(--event);box-shadow:0 0 0 1px var(--event)}
+.overview-note{font-size:11px;margin-top:12px;color:var(--muted)}
+@media(max-width:650px){.career-overview{padding:16px}.overview-heading h3{font-size:19px}.overview-chart{--label-w:190px;min-width:800px}.overview-heading{margin-bottom:12px}}
+
 </style>
 </head>
 <body>
@@ -209,7 +241,9 @@
 <article class="card"><div class="skill-index">05</div><h3>IR 및 투자검토</h3><p>투자 대상 기업의 재무제표 및 재무구조 분석, IR 자료 작성, 투자자 대응 및 투자계약 후속 실무.</p><div class="skill-tags"><span class="tag">재무분석</span><span class="tag">IR</span><span class="tag">RCPS</span></div></article>
 <article class="card"><div class="skill-index">06</div><h3>관계회사 운영관리</h3><p>회계·세무, 인사·급여, 자금관리, 법인행정 및 정부지원사업 사업비 집행·정산 등 기업 운영관리 전반.</p><div class="skill-tags"><span class="tag">WEHAGO</span><span class="tag">운영관리</span><span class="tag">정부지원사업</span></div></article>
 </div></div></section>
-<section class="section" id="career"><div class="shell"><div class="section-head"><div><div class="eyebrow">02 / 경력</div><h2>경력사항</h2><p>경영기획 직무를 중심으로 쌓아온 실무 경험입니다.</p></div><button class="btn" data-pdf="">상세 경력기술서 ↓</button></div><div class="timeline">
+<section class="section" id="career"><div class="shell"><div class="section-head"><div><div class="eyebrow">02 / 경력</div><h2>경력사항</h2><p>경영기획 직무를 중심으로 쌓아온 실무 경험입니다.</p></div><button class="btn" data-pdf="">상세 경력기술서 ↓</button></div><article class="career-overview" id="career-overview" aria-labelledby="overview-title"><div class="overview-heading"><div><h3 id="overview-title">커리어 타임라인</h3><p>학력, 군복무, 실무 경력과 자격 취득을 시간순으로 정리했습니다.</p></div><div class="overview-legend" aria-label="범례"><span data-category="education"><i></i>학력</span><span data-category="military"><i></i>군복무</span><span data-category="career"><i></i>경력</span><span data-category="certificate"><i></i>자격증</span><span data-category="other"><i></i>기타</span></div></div><div class="overview-scroll" tabindex="0" role="region" aria-label="연도별 이력 타임라인, 가로 스크롤 가능"><div class="overview-chart" id="overview-chart"></div></div><p class="overview-note">막대는 재학·복무·재직기간, 점은 취득 시점입니다. 연도만 표시된 이력은 월·일 미확인입니다. 화면이 좁으면 좌우로 스크롤할 수 있습니다.</p><noscript><p>타임라인을 보려면 JavaScript를 활성화해 주세요.</p></noscript></article>
+<script type="application/json" id="career-overview-data">[{"category":"education","name":"충주대원고등학교","start":"2012","end":"2015"},{"category":"military","name":"군복무","start":"2017","end":"2019"},{"category":"certificate","name":"자동차운전면허 2종 보통","start":"2022.08","end":""}]</script>
+<div class="timeline">
 <article class="job"><div class="job-meta"><time>2026.01.26 – 2026.04.30</time><h3>디지털퍼스트㈜</h3><p>경영기획본부 · 팀원<br>광고대행업</p></div><div class="job-body"><h4>경영실적 분석 및 단기 손익 전망</h4><ul><li>디지털퍼스트·디지털트리니티 2개 법인의 매출·비용·손익 분석 및 격주 경영실적 보고</li><li>전년 동기 대비 실적 증감 및 주요 손익 변동요인 분석</li><li>향후 3개월 예상 매출·비용 및 손익 산출</li><li>주요 판관비 항목별 연간 예상액 산정 및 예산 검토자료 작성</li><li>계약금액·기간·여신 조건 검토, 내부 품의 대조 및 날인</li></ul><details><summary>업무 상세 보기</summary><div class="career-detail"><div class="career-detail-item"><h5>경영실적 분석 및 손익 전망</h5><p>부서별 Google 스프레드시트의 실적 자료를 취합해 두 법인의 매출·비용·손익을 분석했습니다. 전년 동기 대비 증감 내역과 주요 손익 변동요인을 파악하고, 예상 매출·비용 발생계획 및 주요 변동사항을 반영해 향후 3개월의 손익 전망을 산출했습니다. 이를 격주 경영실적 보고자료에 반영했습니다.</p></div><div class="career-detail-item"><h5>연간 판관비 예상액 산정</h5><p>인건비, 지급수수료, 임차료, 복리후생비 등 주요 비용을 고정적으로 발생하는 비용과 변동 가능성이 있는 비용으로 구분했습니다. 항목별 발생 특성을 고려해 연간 예상액을 산정하고 전체 판관비 규모와 항목별 지출액을 비교·검토할 수 있도록 예산 검토자료를 작성했습니다.</p></div><div class="career-detail-item"><h5>계약서 검토 및 날인</h5><p>계약 주체, 계약기간, 계약금액, 여신 조건 등 주요 계약 조건을 검토하고 내부 품의와의 일치 여부를 확인했습니다. 추가 확인이 필요한 사항은 유관부서와 조율하고 내부 승인 절차에 따라 날인 및 계약서 처리를 진행했습니다.</p></div></div></details></div></article>
 <article class="job"><div class="job-meta"><time>2022.10.04 – 2026.01.25</time><h3>㈜수성엔지니어링</h3><p>미래전략실 · 사원<br>건설엔지니어링</p></div><div class="job-body"><h4>본사 경영기획 및 관계회사 운영관리</h4><ul><li>17개 부서의 연간 경영계획 및 수주·수금 목표 수립 지원, KPI 관리</li><li>월별 목표 대비 실적 분석 및 분기별 수금 목표·외주계약 한도 조정</li><li>매월 연말 예상손익 산출, 월간 임원회의·반기별 임원 워크숍 보고자료 작성</li><li>ERP·Excel 기반 보고 자동화(부서별 작성시간 3시간 이상 → 5분 내외)</li><li>본사 보통주 투자 대상 재무분석 및 투자계약·후속 실무 지원</li><li>관계회사 외부 투자 관련 IR 자료 작성, 투자자 대응 및 RCPS 발행·등기</li><li>관계회사 ㈜인프라시프트의 회계·세무, 인사·급여, 자금 및 법인행정 관리</li><li>디딤돌·초기창업패키지·TIPS 등 정부지원사업 사업비 집행, 증빙관리 및 정산</li></ul><details><summary>업무 상세 보기</summary><div class="career-detail"><div class="career-detail-item"><h5>1. 연간 경영계획 수립 및 KPI 관리</h5><p>17개 부서의 수주잔고, 인원, 예상 비용 및 목표 이익률을 검토했습니다. 최근 3개년 실적에서 기존 수주잔고와 당해연도 신규 수주의 수금률을 구분해 산출하고, 기존 잔고의 예상 수금액과 예상 비용을 반영해 목표 손익 달성에 필요한 신규 수주 목표금액을 역산했습니다. 월별 KPI 달성률을 분석하고 분기별 수금 목표 및 외주계약 한도 조정안을 작성했습니다.</p></div><div class="career-detail-item"><h5>2. 경영실적 분석 및 손익 전망</h5><p>부서별 월간 손익을 최근 3개년 실적과 비교하여 주요 변동요인을 분석했습니다. 누적 실적에 잔여기간 예상 수금·비용을 반영해 매월 연말 예상손익을 산출했습니다. 수금과 외주비는 기존·신규 수주 또는 계약별 수금률·지급률을 적용하고, 인건비는 인원·인당 인건비·호봉 상승률, 제경비는 최근 3개년 평균 발생액을 기준으로 추정했습니다. 주요 프로젝트의 진행현황과 수금계획도 반영했습니다. 분석 결과를 월간 임원회의 및 반기별 임원 워크숍 보고자료로 구성하고, 경영진 요청에 따른 수시 분석 및 보고를 수행했습니다.</p></div><div class="career-detail-item"><h5>3. ERP·Excel 기반 업무 자동화 및 프로세스 개선</h5><p>K-System Plug-In을 직접 익혀 ERP 데이터와 월간 임원회의 Excel 보고양식을 연계했습니다. 조회 조건과 산출 기준을 설정해 목표 대비 수주·수금·외주계약 실적 및 전년 대비 지표가 자동 반영되도록 구성했습니다. 기존 자료와 결과를 비교하고 전산팀과 협업하여 데이터 정확성을 검증했습니다. 부서별 보고자료 작성시간을 3시간 이상에서 5분 내외로 단축했으며, 손익분석과 실적 집계에도 적용했습니다.</p></div><div class="career-detail-item"><h5>4. IR 및 투자검토</h5><p>관계회사 외부 투자 과정에서 손익계산서·재무상태표 및 채무·비용 관련 요청자료를 정리하고 IR 자료 작성과 투자자 대응을 수행했습니다. 계약 체결 후 상환전환우선주(RCPS) 발행 서류 준비 및 법인등기 절차를 담당했습니다. 본사 보통주 투자 검토 과정에서는 대상 기업 1개사의 재무제표, 손익구조, 부채비율 및 현금흐름을 분석하고 특히 부채 구성과 변동 내역을 검토했습니다. 대상 기업과 직접 소통하며 추가 자료 요청, 검토사항 확인 및 일정 조율을 수행하고 투자계약 체결과 주요 자료 인수 등 후속 실무를 지원했습니다.</p></div><div class="career-detail-item"><h5>5. 관계회사 ㈜인프라시프트 운영관리</h5><p>본사 경영기획 업무와 병행하여 별도의 관리 인력이 없는 10인 내외 관계회사의 운영관리 업무를 담당했습니다.</p></div><div class="career-detail-item career-subitem"><h5>회계·세무</h5><p>WEHAGO를 활용한 월별 전표처리, 매출·매입 세금계산서 및 비용 증빙관리, 부가가치세 등 세금신고 업무를 수행했습니다. 결산 시 회계장부와 증빙을 대조해 누락·오류를 확인하고 세무 대응자료를 정리했습니다.</p></div><div class="career-detail-item career-subitem"><h5>인사·급여</h5><p>근무현황, 수당, 연차 사용 내역을 반영한 월별 급여 산정, 호봉·연차 관리, 4대보험 취득·상실 신고 및 보수총액 신고, 연말정산 업무를 수행했습니다.</p></div><div class="career-detail-item career-subitem"><h5>자금관리</h5><p>월별 자금현황과 향후 입·출금 계획을 바탕으로 예상 자금흐름을 관리하고 자금집행 및 지출 증빙관리 업무를 수행했습니다.</p></div><div class="career-detail-item career-subitem"><h5>법인행정</h5><p>이사회·주주총회 자료 준비 및 운영 지원, 의사록 관리, 법인 변경등기와 정기등기 등 법인 운영에 필요한 행정 절차를 담당했습니다.</p></div><div class="career-detail-item career-subitem"><h5>정부지원사업</h5><p>디딤돌, 초기창업패키지, TIPS 등 정부지원사업의 사업비 집행 및 정산을 담당했습니다. 사업별 집행 기준에 따라 지출 내역과 증빙자료를 관리하고 정산 과정에서 발생한 증빙 보완 요청에 직접 대응했습니다.</p></div></div></details></div></article>
 </div></div></section>
@@ -246,5 +280,33 @@ function selectTab(tab){tabs.forEach(t=>{const active=t===tab;t.setAttribute('ar
 tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>selectTab(tab));tab.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const n=e.key==='Home'?0:e.key==='End'?tabs.length-1:(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;selectTab(tabs[n]);tabs[n].focus();});});selectTab(tabs[0]);
 document.querySelectorAll("[data-project-tab]").forEach(link=>link.addEventListener("click",()=>selectTab(document.getElementById(link.dataset.projectTab))));
 document.querySelectorAll('[data-pdf]').forEach(btn=>btn.addEventListener('click',()=>{const bytes=Uint8Array.from(atob(document.getElementById('pdf-data').textContent.trim()),c=>c.charCodeAt(0));const url=URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}));const a=document.createElement('a');a.href=url;a.download='윤효준_경력기술서.pdf';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);}));
+</script>
+<script>
+(function renderCareerOverview(){
+ const root=document.getElementById('overview-chart');if(!root)return;
+ const categories={education:'학력',military:'군복무',career:'경력',certificate:'자격증',other:'기타'};
+ function date(raw){const m=String(raw||'').trim().match(/^(\d{4})(?:[.\-/](\d{1,2})(?:[.\-/](\d{1,2}))?)?$/);if(!m)return null;const y=+m[1],mo=+(m[2]||1),d=+(m[3]||1);if(y<1900||y>2200||mo<1||mo>12||d<1||d>31)return null;const dt=new Date(Date.UTC(y,mo-1,d));if(dt.getUTCMonth()!==mo-1||dt.getUTCDate()!==d)return null;return {year:y,pos:y+(dt-Date.UTC(y,0,1))/(Date.UTC(y+1,0,1)-Date.UTC(y,0,1)),label:String(y)+(m[2]?'.'+String(mo).padStart(2,'0'):'')+(m[3]?'.'+String(d).padStart(2,'0'):'')};}
+ const events=[];
+ function add(category,name,start,end){const a=date(start),b=end?date(end):null;if(!a||!name||end&&(!b||b.pos<a.pos))return;events.push({category:categories[category]?category:'other',name:String(name),start:a,end:b});}
+ function range(value){const m=String(value||'').match(/(\d{4}(?:[.\-/]\d{1,2}){0,2})\s*[–—~]\s*(\d{4}(?:[.\-/]\d{1,2}){0,2})/);return m?[m[1],m[2]]:[];}
+ document.querySelectorAll('#career .job').forEach(j=>{const d=range(j.querySelector('.job-meta time')?.textContent);if(d.length)add('career',j.querySelector('.job-meta h3')?.textContent.trim(),...d);});
+ document.querySelectorAll('#credentials .edu-card .edu-top').forEach(j=>{const d=range(j.querySelector('p')?.textContent);if(d.length)add('education',j.querySelector('h3')?.textContent.trim(),...d);});
+ document.querySelectorAll('#credentials .edu-grid article:not(.edu-card) .cred-row').forEach(j=>{add('certificate',j.querySelector('b')?.textContent.trim(),j.querySelector('span')?.textContent.trim());});
+ try{const rows=JSON.parse(document.getElementById('career-overview-data').textContent);if(Array.isArray(rows))rows.forEach(e=>add(e.category,e.name,e.start,e.end));}catch(e){console.warn('Career timeline extra entries:',e);}
+ if(!events.length){root.textContent='등록된 이력이 없습니다.';return;}
+ const first=Math.min(...events.map(e=>e.start.year)),last=Math.max(new Date().getFullYear(),...events.map(e=>(e.end||e.start).year)),span=last-first+1;
+ const position=d=>100*(d.pos-first)/span;
+ const make=(tag,cls,value)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(value!==undefined)e.textContent=value;return e;};
+ root.replaceChildren();root.style.setProperty('--year-width',(100/span)+'%');root.style.minWidth=Math.max(850,214+span*42)+'px';
+ const axis=make('div','overview-axis'),ticks=make('div','overview-ticks');axis.append(make('div','overview-axis-label','구분 / 기간'),ticks);
+ const step=span>24?Math.ceil(span/18):1;
+ for(let y=first;y<=last;y+=step){const tick=make('span','overview-tick',String(y));tick.style.left=(100*(y-first)/span)+'%';ticks.append(tick);}root.append(axis);
+ for(const [category,label] of Object.entries(categories)){
+  const groupEvents=events.filter(e=>e.category===category).sort((a,b)=>a.start.pos-b.start.pos);if(!groupEvents.length)continue;
+  const group=make('div','overview-group');group.dataset.category=category;group.append(make('div','overview-group-label',label));
+  for(const e of groupEvents){const row=make('div','overview-row'),name=make('div','overview-name'),period=e.start.label+(e.end?' ~ '+e.end.label:'');name.append(make('b','',e.name),make('small','',period));const plot=make('div','overview-plot');const mark=make('div',e.end?'overview-bar':'overview-dot');mark.style.left=position(e.start)+'%';if(e.end)mark.style.width=Math.max(0,position(e.end)-position(e.start))+'%';mark.title=e.name+' | '+period;mark.setAttribute('aria-hidden','true');plot.append(mark);row.append(name,plot);group.append(row);}
+  root.append(group);
+ }
+})();
 </script>
 </body></html>
